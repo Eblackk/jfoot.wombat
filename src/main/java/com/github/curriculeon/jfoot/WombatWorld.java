@@ -23,10 +23,19 @@ public class WombatWorld extends World {
      * Populate the world with a fixed scenario of wombats and leaves.
      */
     public void populate() {
-        addObject(new Wombat(), 7, 1);
         addObject(new Wombat(), 6, 6);
-        addObject(new Wombat(), 1, 7);
-        randomLeaves(20);
+        int loopnumber = 0;
+        while (loopnumber < getWidth()) {
+            addObject(new Leaf(), loopnumber, 1);
+            loopnumber = loopnumber + 1;
+        }
+
+        loopnumber = 0;
+        while (loopnumber < getHeight()) {
+            addObject(new Leaf(), 1, loopnumber);
+            loopnumber = loopnumber + 1;
+        }
+
     }
 
     /**
