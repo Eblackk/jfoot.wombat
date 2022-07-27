@@ -26,13 +26,31 @@ public class Wombat extends Herbivore {
         }
         if (isAtRightEdge()) {
             turnLeft();
+            if (this.foundLeaf()) {
+                this.eatLeaf();
+            }
             this.move();
+            if (this.foundLeaf()) {
+                this.eatLeaf();
+            }
             turnLeft();
+            if (this.foundLeaf()) {
+                this.eatLeaf();
+            }
         }
         if (isAtLeftEdge()) {
             turnRight();
+            if (this.foundLeaf()) {
+                this.eatLeaf();
+            }
             this.move();
+            if (this.foundLeaf()) {
+                this.eatLeaf();
+            }
             turnRight();
+            if (this.foundLeaf()) {
+                this.eatLeaf();
+            }
         }
         if (isAtleftBorder() && isAtTopBorder()) {
             turnRight();
@@ -86,14 +104,17 @@ public class Wombat extends Herbivore {
     public boolean isAtleftBorder() {
         return getX() == 0;
     }
-    public  boolean isAtRightBorder() {
-        return  getX() == 9;
+
+    public boolean isAtRightBorder() {
+        return getX() == 9;
     }
+
     public boolean isAtTopBorder() {
         return getY() == 0;
     }
+
     public boolean isATBottomBorder() {
-        return  getY() == 9;
+        return getY() == 9;
     }
 
 
