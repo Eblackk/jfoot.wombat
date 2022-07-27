@@ -24,8 +24,9 @@ public class Wombat extends Herbivore {
         } else {
             this.turnLeft();
         }
+
         if (isAtRightEdge()) {
-            turnLeft();
+            this.turnLeft();
             if (this.foundLeaf()) {
                 this.eatLeaf();
             }
@@ -33,13 +34,14 @@ public class Wombat extends Herbivore {
             if (this.foundLeaf()) {
                 this.eatLeaf();
             }
-            turnLeft();
+            this.turnLeft();
             if (this.foundLeaf()) {
                 this.eatLeaf();
             }
         }
+        
         if (isAtLeftEdge()) {
-            turnRight();
+            this.turnRight();
             if (this.foundLeaf()) {
                 this.eatLeaf();
             }
@@ -47,7 +49,7 @@ public class Wombat extends Herbivore {
             if (this.foundLeaf()) {
                 this.eatLeaf();
             }
-            turnRight();
+            this.turnRight();
             if (this.foundLeaf()) {
                 this.eatLeaf();
             }
